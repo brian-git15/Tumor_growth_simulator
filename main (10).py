@@ -55,17 +55,14 @@ def facts(fact):
 #Tumor Size
 def tumor_size_calc(tumor_size,rate):
 #tumor_size = inital tumor at the time(the percent) in reference in cubic centeimeter
-#time_months = time in mounths
 #rate = rate of increase (5%) --> 0.05
   tumor_size = tumor_size * (rate)
   return tumor_size
 
 #option 1 loop 
-while((tumor_size > 20 or tumor_size < 100) and nextMonth == "yes"):
+while((tumor_size > 20) and (tumor_size < 100)):
  #note: insert more facts
-  if tumor_size < 20: 
-    print("Since the tumor has now become small enough, we can use other treatment methods.")
-  
+  print(tumor_size)
   if tumor_size < 10:
     facts(4)
   
@@ -97,10 +94,12 @@ while((tumor_size > 20 or tumor_size < 100) and nextMonth == "yes"):
   print("=======================================================================")
 
 
-
-while (tumor_size < 20 and tumor_size > 1):
+if tumor_size < 20: 
+    print("Since the tumor has now become small enough, we can use other treatment methods.")
+  
+while (tumor_size <= 20 and tumor_size > 1):
   print("You are now able to use different treatment methods.")
-  choice = input("your options are:\n\t a) surgery \n\t b) radiation therepy").lower()
+  choice = input("your options are:\n\t a) surgery \n\t b) radiation therepy\n").lower()
   if (choice == "a"):
     surgery_chance = random.randint(0,100) + therepy_increase
     if surgery_chance > 50:
