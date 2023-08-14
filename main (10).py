@@ -90,11 +90,11 @@ while((tumor_size > 20 or tumor_size < 100) and nextMonth == "yes"):
   if choice == "b":
     chemo_rate += 0.02
     tumor_size = tumor_size_calc(tumor_size,(1.05-chemo_rate))
-  else:
-    print("Not a valid answer.")
   print("would you like to move on to the next Month?(yes or no: ")
-  print(facts(random.randint(1,10)))
+  print("=======================================================================")
   nextMonth = input()
+  print(facts(random.randint(1,10)))
+  print("=======================================================================")
 
 
 
